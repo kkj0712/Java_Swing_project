@@ -1381,13 +1381,13 @@ public class GUIView extends JFrame {
 					for(int i=0;i<10;i++) {
 						boolean e=engArr[i].getText().isEmpty();
 						boolean k=korArr[i].getText().isEmpty();
-						if(e==true) break; //공백은 입력되지 않음
-						if(k==true) break; //공백은 입력되지 않음
+						
 						//단어추가시 기존의 단어는 넣을 수 없음-dao에서 단어 대조하는 메소드를 만들기
 						if(dao.searchEngword(engArr[i].getText())==0){
 							JOptionPane.showMessageDialog(null, engArr[i].getText()+" 단어가 이미 있습니다.");
 							break;
-						}
+						}else if(e==true) break; //공백은 입력되지 않음
+						else if(k==true) break; //공백은 입력되지 않음
 //						//단어추가시 똑같은 단어는 넣을 수 없음
 //						else if(engArr[i].getText().equals(engArr[i+1].getText())) {
 //							JOptionPane.showMessageDialog(null, "중복된 단어는 넣을 수 없습니다.");

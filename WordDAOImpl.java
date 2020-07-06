@@ -142,7 +142,7 @@ public class WordDAOImpl implements WordDAO{
 			rs=ps.executeQuery();
 			
 			if(rs.next()) {
-				str=rs.getString("eng");
+				str=rs.getString("eng"); 
 			}
 			
 		} catch (SQLException e) {
