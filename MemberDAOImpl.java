@@ -103,7 +103,7 @@ public class MemberDAOImpl implements MemberDAO{
             if (rs.next()==false || (id.isEmpty())==true) { // id가 존재x
                 result=1;
             } else { //id가 존재O
-                sql="select * from member where id='" + pw + "'";
+                sql="select * from (select * from member where id='" + id + "')";
                 rs=st.executeQuery(sql);
                 while (rs.next()==true) {         // 다음값의
                     if (rs.getString(4).equals(pw)) { // member DB의 4째열 PW와 같은지 비교

@@ -145,6 +145,9 @@ public class AdminView extends JFrame {
 		JButton btnWordList = new JButton("전체 단어목록");
 		btnWordList.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				tfWordNum.setText("");
+				tfEng.setText("");
+				tfKor.setText("");
 				arr=dao.wordView(); //wordView()로 전체보기 sql문을 활용
 				String []wordcols= {"번호","영어","한글"};
 				DefaultTableModel worddt=new DefaultTableModel(wordcols,arr.size());
@@ -428,6 +431,11 @@ public class AdminView extends JFrame {
 		JButton btnList = new JButton("전체 회원목록");
 		btnList.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				tfNum.setText("");
+				tfName.setText("");
+				tfID.setText("");
+				tfPW.setText("");
+				tfScore.setText("");
 				mArr=mdao.memberView();
 				String []cols= {"번호","이름","아이디","패스워드","이메일","점수"};
 				DefaultTableModel dt=new DefaultTableModel(cols,mArr.size());
